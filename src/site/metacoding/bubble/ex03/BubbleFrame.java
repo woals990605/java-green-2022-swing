@@ -60,8 +60,11 @@ public class BubbleFrame extends JFrame {
 				//왼쪽 37, 오른쪽은 39, 위쪽은 38, 아래쪽은 40
 				System.out.println("키보드 프레스 :" +e.getKeyCode());
 				
-				if(e.getKeyCode() == 39) {
+				if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
 					player.right();
+				}else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+					player.left();
+					
 				}
 			}
 		}); // 대상이 없기때문에

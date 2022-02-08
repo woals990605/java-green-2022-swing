@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 
 public class Player extends JLabel {
 
-	private ImageIcon playerR;
+	private ImageIcon playerR, playerL;
 	private int x;
 	private int y;
 
@@ -23,6 +23,7 @@ public class Player extends JLabel {
 
 	private void initObject() {
 		playerR = new ImageIcon("image/playerR.png");
+		playerL = new ImageIcon("image/playerL.png");
 	}
 
 	private void initSetting() {
@@ -31,16 +32,23 @@ public class Player extends JLabel {
 		setIcon(playerR);
 		setSize(50, 50);
 		setLocation(x, y); // paintComponent 호출해줌
+		
+
 	}
 
 	public void left() {
-		
+		setIcon(playerL);
+		System.out.println("왼쪽 이동");
+		x = x - 10;
+		setLocation(x, y);
+
 	}
 
 	public void right() {
+		setIcon(playerR);
 		System.out.println("오른쪽 이동");
-		x = x+10;
-		setLocation(x,y);
+		x = x + 10;
+		setLocation(x, y);
 	}
 
 }
